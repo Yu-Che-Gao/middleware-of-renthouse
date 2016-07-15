@@ -3,7 +3,12 @@ const app = express();
 const request = require('request');
 const port = process.env.PORT || 80;
 
-app.get('/', function(req, res) {
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.get('/', function (req, res) {
   res.send('you have no right to access this page.');
 });
 
