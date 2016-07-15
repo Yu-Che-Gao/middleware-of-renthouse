@@ -4,8 +4,7 @@ const request = require('request');
 const port = process.env.PORT || 80;
 
 app.get('/', function (req, res) {
-  res.charset = 'utf-8';
-  res.send('禁止進入');
+  res.send('testing');
 });
 
 app.post('/insert-url-and-phone', function (req, res) {
