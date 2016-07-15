@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const request = require('request');
 const bodyParser = require('body-parser');
+const lib = reqire('./lib.js');
 const port = process.env.PORT || 80;
 
 app.use(function (req, res, next) {
@@ -19,16 +20,10 @@ app.post('/insert-url-and-phone', function (req, res) {
   let url = req.body.url;
   let phone = req.body.phone;
   let urlId = req.body.url_id;
-  
-  request.post({
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    url: 'http://x.rce.tw/s/h3584935/insert_url_and_phone.php',
-    body: 'url=' + url + '&phone=' + phone + '&url_id=' + urlId
-  }, function (error, response, body) {
-    res.send(body);
-  });
+  lib.insertDB(url, phone, urlId);
 });
 
 app.listen(port, function () {
   console.log('Example app listening on port ' + port + '!');
 });
+
