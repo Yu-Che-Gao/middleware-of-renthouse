@@ -34,8 +34,9 @@ function selectDBByPhone(phone, res) {
         body: 'phone=' + phone
     }, function (error, response, body) {
         let bodyParser = JSON.parse(body);
-        let urlArray = new Object();
+        let urlArray = [];
         for (let i = 0; i < bodyParser.length; i++) {
+            urlArray[i] = new Object();
             urlArray[i].url = bodyParser[i].url;
         }
 
