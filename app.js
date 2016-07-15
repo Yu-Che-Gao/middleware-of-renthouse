@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
 const request = require('request');
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 80;
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
+
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.get('/', function (req, res) {
   res.send('you have no right to access this page.');
