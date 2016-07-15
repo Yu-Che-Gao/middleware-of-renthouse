@@ -12,10 +12,10 @@ app.get('/', function (req, res) {
   res.send('you have no right to access this page.');
 });
 
-app.get('/insert-url-and-phone', function (req, res) {
-  let url = req.query.url;
-  let phone = req.query.phone;
-  let urlId = req.query.url_id;
+app.post('/insert-url-and-phone', function (req, res) {
+  let url = req.body.url;
+  let phone = req.body.phone;
+  let urlId = req.body.url_id;
   res.send(url + ' ' + phone + ' ' + urlId);
 
   // var request = require('request');
