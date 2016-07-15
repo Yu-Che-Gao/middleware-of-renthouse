@@ -16,16 +16,16 @@ app.post('/insert-url-and-phone', function (req, res) {
   let url = req.params.url;
   let phone = req.params.phone;
   let urlId = req.params.url_id;
-  // res.send(url + ' ' + phone + ' ' + urlId);
+  res.send(url + ' ' + phone + ' ' + urlId);
 
-  var request = require('request');
-  request.post({
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    url: 'http://x.rce.tw/s/h3584935/insert_url_and_phone.php',
-    body: 'url=' + url + '&phone=' + phone + '&url_id=' + urlId
-  }, function (error, response, body) {
-    res.send(body);
-  });
+  // var request = require('request');
+  // request.post({
+  //   headers: { 'content-type': 'application/x-www-form-urlencoded' },
+  //   url: 'http://x.rce.tw/s/h3584935/insert_url_and_phone.php',
+  //   body: 'url=' + url + '&phone=' + phone + '&url_id=' + urlId
+  // }, function (error, response, body) {
+  //   res.send(body);
+  // });
 });
 
 app.listen(port, function () {
