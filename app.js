@@ -3,7 +3,7 @@ const app = express();
 const request = require('request');
 const port = process.env.PORT || 80;
 
-app.use(function (req, res, next) {
+app.use(function (error, req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
