@@ -4,7 +4,16 @@ const request = require('request');
 const port = process.env.PORT || 80;
 
 app.get('/', function (req, res) {
-  res.send('test');
+  res.charset = 'utf-8';
+  res.send('禁止進入');
+});
+
+app.post('/insert-url-and-phone', function (req, res) {
+  let url = req.param('url');
+  let phone = req.param('phone');
+  let urlId = req.param('url_id');
+  res.charset = 'utf-8';
+  res.send(url + ' ' + phone + ' ' + urlId);
 });
 
 app.listen(port, function () {
