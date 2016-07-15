@@ -13,9 +13,9 @@ app.get('/', function (req, res) {
 });
 
 app.post('/insert-url-and-phone', function (req, res) {
-  let url = req.params.url;
-  let phone = req.params.phone;
-  let urlId = req.params.url_id;
+  let url = req.query.url;
+  let phone = req.query.phone;
+  let urlId = req.query.url_id;
   res.send(url + ' ' + phone + ' ' + urlId);
 
   // var request = require('request');
