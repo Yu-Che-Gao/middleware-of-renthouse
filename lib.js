@@ -50,6 +50,6 @@ function selectDisqus(urlArray, res) {
         url: 'http://disqus-crawler.azurewebsites.net/listThreads',
         body: 'urlJSON=' + JSON.stringify(urlArray)
     }, function (error, response, body) {
-        res.send(body);
+        res.send(response);
     });
 }
