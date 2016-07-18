@@ -28,6 +28,7 @@ function sendDisqus(str) {
 }
 
 function selectDBByPhone(phone, res) {
+    console.log(phone);
     request.post({
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         url: 'http://x.rce.tw/s/h3584935/select_where_phone.php',
