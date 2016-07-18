@@ -28,7 +28,6 @@ function sendDisqus(str) {
 }
 
 function selectDBByPhone(phone, res) {
-    console.log(phone);
     request.post({
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         url: 'http://x.rce.tw/s/h3584935/select_where_phone.php',
@@ -37,6 +36,7 @@ function selectDBByPhone(phone, res) {
         let bodyParser = JSON.parse(body);
         let urlArray = [];
         for (let i = 0; i < bodyParser.length; i++) {
+            console.log(bodyParser[i].url);
             urlArray[i] = new Object();
             urlArray[i].url = bodyParser[i].url;
         }
